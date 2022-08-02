@@ -5,7 +5,7 @@ N, M, K = tuple(map(int, sys.stdin.readline().split()))
 
 num_list = [int(sys.stdin.readline()) for i in range(0, N)]
 # seg_tree = [0 for i in range(0, int(math.pow(math.ceil(math.sqrt(N)), 2) * 2))]
-seg_tree = [0] * 3000000
+seg_tree = [0] * 32
 
 def init_tree(start, end, index):
 
@@ -34,8 +34,6 @@ def modify_tree(start, end, change_idx, change_num, index):
     seg_tree[index] += tmp
     return tmp
 
-    
-
 def get_sum(start, end, first_idx, second_idx, index):
     # 범위 왼쪽, 오른쪽은 검사하지 않는다.
     if end < first_idx or second_idx < start:
@@ -52,10 +50,12 @@ def get_sum(start, end, first_idx, second_idx, index):
 
     
 init_tree(0, N-1, 1)
+print(seg_tree)
 
 for i in range(0, M+K):
     a, b, c = tuple(map(int, sys.stdin.readline().split()))
     if a == 1:
         modify_tree(0, N-1, b-1, c, 1)
+        print(seg_tree)
     elif a == 2:
         print(get_sum(0, N-1, b-1, c-1, 1))
