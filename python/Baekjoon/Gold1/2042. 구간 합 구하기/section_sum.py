@@ -5,7 +5,7 @@ N, M, K = tuple(map(int, sys.stdin.readline().split()))
 
 num_list = [int(sys.stdin.readline()) for i in range(0, N)]
 # seg_tree = [0 for i in range(0, int(math.pow(math.ceil(math.sqrt(N)), 2) * 2))]
-seg_tree = [0] * 32
+seg_tree = [0] * 3000000
 
 def init_tree(start, end, index):
 
