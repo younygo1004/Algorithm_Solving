@@ -1,9 +1,8 @@
 package 고득점_Kit.해시.완주하지_못한_선수;
 
-import java.util.*;
-import java.util.Arrays.*;
-import java.util.stream.*;
-import java.util.function.*;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
